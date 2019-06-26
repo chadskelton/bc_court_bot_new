@@ -174,11 +174,7 @@ def scrape_bcpc(url):
         
         # new instructions for canlii site
         
-        soup = BeautifulSoup(htmlpage)
-        
-        print soup
-        
-        section = soup.find ("div", {"id" : "recentJudg"})
+        section = soup.find ("div", {"id" : "recentDecisions"})
         
         decisions = section.findAll ("a")        
         
