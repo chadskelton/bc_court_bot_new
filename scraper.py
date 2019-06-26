@@ -159,10 +159,10 @@ def scrape_bcpc(url):
             record["url"] = badurl.replace("/judgments.php?link=","")
             tweetit(record)
 
-try:
-    scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
-except:
-    print 'Difficulty scraping BCSC'
+#try:
+scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
+#except:
+#    print 'Difficulty scraping BCSC'
     
 try:
     scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
