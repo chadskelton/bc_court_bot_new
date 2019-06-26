@@ -148,6 +148,8 @@ def scrape_bcpc(url):
         
         soup = BeautifulSoup(htmlpage)
         
+        print soup
+        
         # table = soup.find ("div", {"class" : "view-content"})
         
         # print table
