@@ -149,6 +149,8 @@ def scrape_bcpc(url):
         soup = BeautifulSoup(htmlpage)
         
         table = soup.find ("div", {"class" : "view-content"})
+        
+        print table
     
         decisions = table.findAll ("a")
         
