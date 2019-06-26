@@ -145,7 +145,8 @@ def scrape_bcca(url):
 
 def scrape_bcpc(url):
         
-        html = requests.get(url, verify=False, headers={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'})
+        # html = requests.get(url, verify=False, headers={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'})
+        html = requests.get(url)
         # verify=False because getting 502 errors due to invalid certificate
         htmlpage = html.content
         
@@ -161,12 +162,7 @@ def scrape_bcpc(url):
         br.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')]
         html = br.open(url)
         htmlpage = html.content
-        '''
-        
-        soup = BeautifulSoup(htmlpage)
-        
-        print soup
-        
+
         table = soup.find ("div", {"class" : "view-content"})
         
         print table
@@ -174,6 +170,17 @@ def scrape_bcpc(url):
         decisions = table.findAll ("a")
         
         # decisions = soup.findAll ("div", {"class":"views-field views-field-text"})
+        '''
+        
+        # new instructions for canlii site
+        
+        soup = BeautifulSoup(htmlpage)
+        
+        print soup
+        
+        section = soup.find ("div", {"id" : "recentJudg"})
+        
+        decisions = section.findAll ("a")        
         
         print decisions
         
@@ -196,6 +203,7 @@ except:
     print 'Difficulty scraping BCCA'
     
 #try:
-scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
+#scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
+scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
 #except:
 #    print 'Difficulty scraping BCPC'
