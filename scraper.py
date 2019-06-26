@@ -143,7 +143,7 @@ def scrape_bcca(url):
         tweetit(record)
 
 def scrape_bcpc(url):
-        html = requests.get(url, cert=False)
+        html = requests.get(url, headers=('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'))
         # verify=False because getting 502 errors due to invalid certificate
         htmlpage = html.content
         
