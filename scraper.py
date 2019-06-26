@@ -170,7 +170,7 @@ try:
 except:
     print 'Difficulty scraping BCCA'
     
-try:
-    scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
-except:
-    print 'Difficulty scraping BCPC'
+#try:
+scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
+#except:
+#    print 'Difficulty scraping BCPC'
