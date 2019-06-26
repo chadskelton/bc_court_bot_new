@@ -198,9 +198,11 @@ try:
     scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
 except:
     print 'Difficulty scraping BCCA'
-    
+'''    
 try:
 #scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
     scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
 except:
     print 'Difficulty scraping BCPC'
+    
+'''
