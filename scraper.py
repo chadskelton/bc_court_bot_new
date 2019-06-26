@@ -156,6 +156,8 @@ def scrape_bcpc(url):
         
         decisions = soup.findAll ("span", {"class":"title"})
         
+        print decisions
+        
         for decision in decisions:
             record = {}
             record["type"] = "B.C. Provincial Court"
