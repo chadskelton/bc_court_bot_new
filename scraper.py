@@ -59,8 +59,8 @@ def tweetit(record): # both decides to tweet and whether to add to table
             statusupdate = "New ruling from the " + record["type"] + " in '" + CitationText + "' " + record["url"]
             print statusupdate
             # comment out to populate database so don't duplicate;  remove after first run
-            api.update_status(status=statusupdate)
-            time.sleep(60)
+            # api.update_status(status=statusupdate)
+            # time.sleep(60)
         except:
             print "Unable to add to table or tweet"
             
@@ -184,8 +184,9 @@ def scrape_bcpc(url):
             record = {}
             record["type"] = "B.C. Provincial Court"
             record["citation"] = decision.text
-            badurl = decision.get('href')
-            record["url"] = badurl.replace("/judgments.php?link=","")
+            # badurl = decision.get('href')
+            # record["url"] = badurl.replace("/judgments.php?link=","")
+            record["url"] = 'https://www.canlii.org' + decision.get('href')
             tweetit(record)
 
 try:
