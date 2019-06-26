@@ -57,8 +57,9 @@ def tweetit(record): # both decides to tweet and whether to add to table
             scraperwiki.sqlite.save(['url'], record)
             statusupdate = "New ruling from the " + record["type"] + " in '" + CitationText + "' " + record["url"]
             print statusupdate
-            api.update_status(status=statusupdate)
-            time.sleep(30)
+            # commenting out to populate database so don't duplicate; will remove after first run
+            # api.update_status(status=statusupdate)
+            # time.sleep(30)
         except:
             print "Unable to add to table or tweet"
             
@@ -159,10 +160,10 @@ def scrape_bcpc(url):
             record["url"] = badurl.replace("/judgments.php?link=","")
             tweetit(record)
 
-#try:
-scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
-#except:
-#    print 'Difficulty scraping BCSC'
+try:
+    scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
+except:
+    print 'Difficulty scraping BCSC'
     
 try:
     scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
