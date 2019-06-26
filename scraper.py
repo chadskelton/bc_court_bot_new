@@ -59,8 +59,8 @@ def tweetit(record): # both decides to tweet and whether to add to table
             statusupdate = "New ruling from the " + record["type"] + " in '" + CitationText + "' " + record["url"]
             print statusupdate
             # comment out to populate database so don't duplicate;  remove after first run
-            # api.update_status(status=statusupdate)
-            # time.sleep(60)
+            api.update_status(status=statusupdate)
+            time.sleep(60)
         except:
             print "Unable to add to table or tweet"
             
@@ -198,11 +198,9 @@ try:
     scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
 except:
     print 'Difficulty scraping BCCA'
-'''    
+    
 try:
 #scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
     scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
 except:
     print 'Difficulty scraping BCPC'
-    
-'''
