@@ -15,6 +15,7 @@ import requests
 from BeautifulSoup import BeautifulSoup
 # new for secret variables
 import os
+import mechanize
 
 # Establish Twitter authorization. These codes are specific to @BCCourtBot
 # Think it's better to setup authorization at beginning instead of resetting within tweet function, but not sure
@@ -143,8 +144,22 @@ def scrape_bcca(url):
         tweetit(record)
 
 def scrape_bcpc(url):
+        
+        '''
         html = requests.get(url, verify=False, headers={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'})
         # verify=False because getting 502 errors due to invalid certificate
+        htmlpage = html.content
+        
+        soup = BeautifulSoup(htmlpage)
+        
+        print soup
+        '''
+        
+        br = mechanize.Browser()
+        br.set_handle_robots(False)
+        # br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+        br.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')]
+        html = br.open(url)
         htmlpage = html.content
         
         soup = BeautifulSoup(htmlpage)
