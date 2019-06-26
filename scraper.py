@@ -154,7 +154,7 @@ def scrape_bcpc(url):
     
         # decisions = table.findAll ("a")
         
-        decisions = soup.findAll ("span", {"class":"title'})
+        decisions = soup.findAll ("span", {"class":"title"})
         
         for decision in decisions:
             record = {}
