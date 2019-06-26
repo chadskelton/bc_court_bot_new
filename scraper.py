@@ -45,7 +45,7 @@ def tweetit(record): # both decides to tweet and whether to add to table
     else:
         CitationText = record["citation"]
         
-    query = "SELECT count(*) FROM swdata WHERE url = '" + record["url"] + "'"
+    query = "SELECT count(*) FROM data WHERE url = '" + record["url"] + "'"
     count = scraperwiki.sqlite.execute(query)
     countcheck = count['data'][0][0]
     if countcheck > 0:
