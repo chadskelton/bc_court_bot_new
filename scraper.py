@@ -152,7 +152,7 @@ def scrape_bcpc(url):
         
         soup = BeautifulSoup(htmlpage)
         
-        print soup
+        # print soup
         
         '''     
         # attempt to do it with mechanize instead of requests; still errored
