@@ -189,18 +189,24 @@ def scrape_bcpc(url):
             record["url"] = 'https://www.canlii.org' + decision.get('href')
             tweetit(record)
 
-try:
-    scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
-except:
-    print 'Difficulty scraping BCSC'
+            
+
+for x in range (0, 21):
     
-try:
-    scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
-except:
-    print 'Difficulty scraping BCCA'
+    time.sleep(3600) # wait one hour
     
-try:
-#scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
-    scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
-except:
-    print 'Difficulty scraping BCPC'
+    try:
+        scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
+    except:
+        print 'Difficulty scraping BCSC'
+
+    try:
+        scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
+    except:
+        print 'Difficulty scraping BCCA'
+
+    try:
+    #scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
+        scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
+    except:
+        print 'Difficulty scraping BCPC'
