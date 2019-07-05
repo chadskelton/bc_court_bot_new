@@ -192,7 +192,7 @@ def scrape_bcpc(url):
             
 
 for x in range (0, 21):
-    
+    print "Cycle:" + str(x)
     time.sleep(3600) # wait one hour
     
     try:
