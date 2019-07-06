@@ -205,7 +205,7 @@ for x in range (0, 21):
         print 'Difficulty scraping BCCA'
 
     #try:
-scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
+    scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
     #except:
         #print 'Difficulty scraping BCPC'
     #time.sleep(3600) # wait one hour
