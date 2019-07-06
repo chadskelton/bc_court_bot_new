@@ -181,11 +181,9 @@ def scrape_bcpc(url):
         decisions = table.findAll ("a")
         
         # decisions = soup.findAll ("div", {"class":"views-field views-field-text"})
-        '''
         
         # new instructions for canlii site, commented out because no longer working
         
-        '''
         
         print soup
         
@@ -205,7 +203,7 @@ def scrape_bcpc(url):
             # record["url"] = badurl.replace("/judgments.php?link=","")
             record["url"] = 'https://www.canlii.org' + decision.get('href')
             tweetit(record)
-        '''            
+'''            
 
             
 
