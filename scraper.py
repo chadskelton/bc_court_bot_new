@@ -208,4 +208,4 @@ for x in range (0, 21):
 scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
     #except:
         #print 'Difficulty scraping BCPC'
-    time.sleep(3600) # wait one hour
+    #time.sleep(3600) # wait one hour
