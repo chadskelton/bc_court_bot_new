@@ -220,8 +220,9 @@ for x in range (0, 21):
     except:
         print 'Difficulty scraping BCCA'
 
-    #try:
-    scrape_bcpc("https://www.provincialcourt.bc.ca/judgments-decisions")
-    #except:
-        #print 'Difficulty scraping BCPC'
-    #time.sleep(3600) # wait one hour
+    try:
+        scrape_bcpc("https://www.provincialcourt.bc.ca/judgments-decisions")
+    except:
+        print 'Difficulty scraping BCPC'
+        
+    time.sleep(3600) # wait one hour
