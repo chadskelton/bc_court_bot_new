@@ -144,7 +144,7 @@ def scrape_bcca(url):
         tweetit(record)
 
 def scrape_bcpc(url):
-        html = requests.get(url)
+        html = requests.get(url, verify=False) # added verify=False because of SSL Error
         htmlpage = html.content
         
         soup = BeautifulSoup(htmlpage)
