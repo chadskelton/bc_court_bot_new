@@ -173,10 +173,10 @@ def scrape_bcpc(url):
         '''
         
         # new instructions for canlii site
-        
-        print section
-        
+             
         section = soup.find ("div", {"id" : "decisionsListing"})
+        
+        print section        
         
         decisions = section.findAll ("a")        
         
