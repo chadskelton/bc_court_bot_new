@@ -144,6 +144,26 @@ def scrape_bcca(url):
         tweetit(record)
 
 def scrape_bcpc(url):
+        html = requests.get(url)
+        htmlpage = html.content
+        
+        soup = BeautifulSoup(htmlpage)
+        
+        table = soup.find ("div", {"class" : "view-content"})
+    
+        decisions = table.findAll ("a")
+        
+        for decision in decisions:
+            record = {}
+            record["type"] = "B.C. Provincial Court"
+            record["citation"] = decision.text
+            badurl = decision.get('href')
+            record["url"] = badurl.replace("/judgments.php?link=","")
+            tweetit(record)
+            
+        
+'''
+def scrape_bcpc(url):
         
         # html = requests.get(url, verify=False, headers={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'})
         html = requests.get(url, verify=False)
@@ -154,18 +174,9 @@ def scrape_bcpc(url):
         
         print soup
         
-        '''     
-        # attempt to do it with mechanize instead of requests; still errored
-        br = mechanize.Browser()
-        br.set_handle_robots(False)
-        # br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-        br.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')]
-        html = br.open(url)
-        htmlpage = html.content
-
         table = soup.find ("div", {"class" : "view-content"})
         
-        print table
+        # print table
     
         decisions = table.findAll ("a")
         
