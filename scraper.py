@@ -62,7 +62,11 @@ def tweetit(record): # both decides to tweet and whether to add to table
             api.update_status(status=statusupdate)
             time.sleep(60)
         except:
-            print "Unable to add to table or tweet"
+            print "Unable to add to table or tweet:"
+            try:
+                print record # to try to see what record couldn't be sent
+            except:
+                print "Couldn't display record"
             
     # code to send out tweet based on the record dict that's sent to the function
 
