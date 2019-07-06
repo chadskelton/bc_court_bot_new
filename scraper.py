@@ -213,6 +213,7 @@ def scrape_bcpc(url):
 
 for x in range (0, 21):
     print "Cycle:" + str(x)
+    time.sleep(3600)
     
     try:
         scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
@@ -228,5 +229,3 @@ for x in range (0, 21):
         scrape_bcpc("https://www.provincialcourt.bc.ca/judgments-decisions")
     except:
         print 'Difficulty scraping BCPC'
-        
-    time.sleep(3600) # wait one hour
