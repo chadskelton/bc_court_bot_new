@@ -205,8 +205,7 @@ for x in range (0, 21):
     except:
         print 'Difficulty scraping BCCA'
 
-    try:
-    #scrape_bcpc("http://www.provincialcourt.bc.ca/judgments-decisions")
-        scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
-    except:
+    #try:
+scrape_bcpc("https://www.canlii.org/en/bc/bcpc/")
+    #except:
         print 'Difficulty scraping BCPC'
