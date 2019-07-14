@@ -211,7 +211,7 @@ def scrape_bcpc(url):
 
             
 
-for x in range (0, 21):
+for x in range (0, 15): # trying 15 instead of 21
     print "Cycle:" + str(x)
     time.sleep(3600)
     
