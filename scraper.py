@@ -216,12 +216,12 @@ for x in range (0, 15): # trying 15 instead of 21
     time.sleep(3600)
     
     try:
-        scrape_bcsc("http://www.courts.gov.bc.ca/supreme_court/recent_Judgments.aspx")
+        scrape_bcsc("https://www.bccourts.ca/supreme_court/recent_Judgments.aspx")
     except:
         print 'Difficulty scraping BCSC'
 
     try:
-        scrape_bcca("http://www.courts.gov.bc.ca/court_of_appeal/recent_Judgments.aspx")
+        scrape_bcca("https://www.bccourts.ca/court_of_appeal/recent_Judgments.aspx")
     except:
         print 'Difficulty scraping BCCA'
 
