@@ -7,7 +7,7 @@ mechanize==0.2.5
 requests==2.22.0
 # tweepy==1.7.1
 tweepy==2.2
-lxml==2.3.3
+lxml==4.6.5
 pyOpenSSL==0.13
 # ndg-httpsclient==0.41
 pyasn1==0.4.5
